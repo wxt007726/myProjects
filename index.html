@@ -7,7 +7,75 @@
   <title>wxt个人主页</title>
 </head>
 <body>
-  <h1>hello world</h1>
-  jianli
+  <div>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            background-color: #CCC;
+        }
+        </style>
+    </head>
+
+    <body>
+        <canvas width="600" height="600" id="cvs"></canvas>
+        <script type="text/javascript">
+        var ctx = cvs.getContext("2d");
+        var arr = [];
+        ctx.translate(300, 300);
+        var num = 0;
+        //绘制
+        window.setInterval(function() {
+            ctx.clearRect(-300, -300, 600, 600);
+            for (var i = 0; i < arr.length; i++) {
+                ctx.save();
+                ctx.rotate(Math.PI / 180 * arr[i].angle);
+                ctx.scale(arr[i].scale, arr[i].scale);
+                ctx.fillStyle = arr[i].color;
+                ctx.fillRect(arr[i].radius, arr[i].radius, 30, 30);
+                ctx.restore();
+            }
+
+        }, 50);
+        //移动矩形
+        window.setInterval(function() {
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i].radius <= 0) {
+                        arr.splice(i, 1);
+                        i--;
+                        continue;
+                    }
+                    arr[i].angle += 2;
+                    arr[i].radius -= .2;
+                    arr[i].scale -= .002;
+                    if (arr[i].scale <= .002) {
+                        arr[i].scale = .002;
+                    }
+                }
+            }, 50)
+            //创建矩形
+        window.setInterval(function() {
+            arr.push({
+                angle: 0,
+                radius: 150,
+                scale: 1,
+                color: "rgb(" + parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ")"
+            });
+        }, 1000);
+        </script>
+    </body>
+
+    </html>
+
+  </div>
 </body>
 </html>
