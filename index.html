@@ -2,21 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>wxt个人主页</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./css/resetcss.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-  <div id="logo" class="logo">
-    <img width="150" height="50" src="./tmpdir--17_3_6_15_06_11.gif" alt="">
-    <div class="nav">
-      <button type="button" name="button">个人简介</button>
-      <button type="button" name="button" class="selectde">作品展示</button>
-      <button type="button" name="button">兴趣爱好</button>
+  <header>
+    <div id="navbanner" class="navbanner">
+      <div id="logo" class="logo">
+        <img src="./images/tmpdir--17_3_6_15_06_11.gif" alt="wxt个人主页">
+      </div>
+      <nav id="nav" class="nav">
+        <ul>
+          <li name="page1" class="selected" title="TA的个人信息介绍……点击查看详情">个人简介</li>
+          <li name="page2" title="TA的作品展示……点击查看详情">项目作品</li>
+          <li name="page3" title="TA的日常练习……点击查看详情">兴趣爱好</li>
+          <li name="page4" title="TA的个人联系方式……点击查看详情">联系TA</li>
+        </ul>
+      </nav>
     </div>
+  </header>
+  <div id="content" class="content">
+
   </div>
-  <div id="wrapper"></div>
-  <script type="text/javascript" src="./index.js"></script>
+
+  <script type="text/javascript" src="./js/auto-size.js"></script>
+  <script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
