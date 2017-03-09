@@ -32,16 +32,14 @@
     $(this).toggleClass('selected');
     index=$(this).index();
     $('#content').html('');
-    $('#content').html(arr[index]);
+
     $.ajax({
-      url: 'data/data.json',
+      url: './data/data.json',
       type: 'GET',
-      dataType: 'json',
-      complete: function() {
-        console.log('compelete');
-      },
+      dataType:'json',
       success:function(data){
         console.log(data);
+        $('#content').html(data.list[0].item);
       }
     })
     .done(function() {
