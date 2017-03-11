@@ -28,6 +28,7 @@ img{
   vertical-align: middle;
   color:red;
   cursor: pointer;
+  font-weight: 800
 }
 .nav li:last-child{
   align-items:flex-end;
@@ -37,7 +38,7 @@ img{
   color: white
 }
 .content{
-  width: 92%;
+  width: 90%;
   margin:0.2rem auto;
   padding: 0.2rem
 }
